@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gracias por tu compra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --overlay: rgba(0,0,0,.8);
+      --text: #fff;
+      --muted: #cfd2d6;
+      --btn-grad: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+      --radius: 10px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    html,body{
+      height:100%;
+      overflow:hidden;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    .bg{
+      position:fixed;inset:0;
+      background:url('/bg-hero.avif') center/cover no-repeat;
+      z-index:-2;
+    }
+    .shade{
+      position:fixed;inset:0;background:var(--overlay);z-index:-1;
+    }
+
+    .wrap{
+      min-height:100svh;
+      display:grid;
+      place-items:center;
+      padding:clamp(16px,3vw,32px);
+      text-align:center;
+    }
+
+    .card{
+      width:100%;
+      max-width: 500px;           /* limita a largura para leitura confortável */
+      margin-inline:auto;
+      display:flex;
+      flex-direction:column;
+      gap:clamp(16px,2.5vw,28px);
+    }
+
+    h1{
+      font-weight:700;
+      letter-spacing:-0.02em;
+      line-height:1.15;
+      font-size:clamp(28px,3.8vw,48px);
+    }
+
+    .lead{
+      color: #9e9e9e;
+      line-height:1.6;
+      font-size:clamp(14px,1.3vw,18px);
+      max-width:60ch;             /* garante número de caracteres por linha */
+      margin:0 auto;
+    }
+
+    .cta{
+      display:inline-block;
+      align-self:center;
+      background:var(--btn-grad);
+      color:#fff;
+      font-weight:800;
+      font-size:clamp(14px,1.2vw,18px);
+      padding:16px 28px;
+      border-radius: var(--radius);
+      text-decoration:none;
+      box-shadow:0 10px 30px rgba(229,46,113,.25);
+      transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+      white-space:nowrap;
+    }
+
+   
+    .cta:hover{ transform:translateY(-6px); box-shadow:0 14px 34px rgba(229,46,113,.32);}
+    .cta:active{ transform:translateY(0); opacity:.95;}
+
+    .support{
+      color: #9e9e9e;
+      line-height:1.6;
+      font-size:clamp(12px,1.1vw,16px);
+      max-width:70ch;
+      margin:0 auto;
+      margin-top: 3rem;
+    }
+    .support a{
+      color:#fff;
+      text-decoration:none;
+      border-bottom:1px solid rgba(255,255,255,.25);
+      padding-bottom:1px;
+      word-break:break-word;
+    }
+
+    /* melhora o alinhamento em telas muito largas */
+    @media (min-width:1200px){
+      .card{ gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="shade"></div>
+
+  <main class="wrap">
+    <section class="card">
+      <h1>¡Felicitaciones <br> por tu compra!</h1>
+      <p class="lead">
+        Para descargar los presets y bonus, <br> solo tienes que hacer clic en el botón de abajo:
+      </p>
+      <a href="https://drive.google.com/drive/folders/1ckJ-IIJtr1LolPSMG280zIwz3STq8pSi?usp=sharing" class="cta">ACCEDER A MIS PRODUCTOS</a>
+      <p class="support">
+        Si tienes alguna duda o problema después de ver el tutorial, <br> nuestro equipo de soporte está a tu disposición en el correo: <br>
+        <a href="mailto:elevenpreset@gmail.com">elevenpreset@gmail.com</a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>
